@@ -52,7 +52,9 @@ Package.pins
 Package.resolved
 .build/
 
+## Pods
 Pods/
+
 Carthage/
 
 fastlane/report.xml
