@@ -15,6 +15,10 @@ class AuthViewController: BaseViewController<AuthView> {
     
     var output: AuthViewOutput!
     
+    internal override var navigationController: UINavigationController? {
+        return UIApplication.shared.delegate?.window??.rootViewController as? UINavigationController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,9 +32,10 @@ class AuthViewController: BaseViewController<AuthView> {
         mainView.passwordTextField.delegate = self
         
         //actions
-        mainView.logInButton.addTarget(self, action: #selector(logInButtonPressed), for: .touchUpInside)
+        mainView.logInButton.addTarget(self, action:
+            #selector(logInButtonPressed), for: .touchUpInside)
         mainView.forgetButton.addTarget(self, action: #selector(forgetButtonPressed), for: .touchUpInside)
-        mainView.forgetButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
+        mainView.signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
     }
     
     func updateLoginButtonState(){
@@ -42,15 +47,17 @@ class AuthViewController: BaseViewController<AuthView> {
     }
     
     @objc func logInButtonPressed(){
-        
+        print("logIn")
     }
     
     @objc func forgetButtonPressed(){
-        
+        print("forget")
     }
     
     @objc func signInButtonPressed(){
-        
+        let view = TabBarViewController()
+        self.navigationController?.pushViewController(view, animated: true)
+        print("sigIn")
     }
 
 }

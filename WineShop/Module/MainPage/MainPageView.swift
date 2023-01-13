@@ -1,12 +1,12 @@
 import UIKit
 import SnapKit
 
-class CatalogView: BaseView {
+class MainPageView: BaseView {
 
     override func initSetup() {
         super.initSetup()
-        backgroundColor = .red
-
+        
+        backgroundColor = .white
         setupConstraints()
     }
     
