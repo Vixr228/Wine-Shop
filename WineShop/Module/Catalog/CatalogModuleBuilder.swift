@@ -1,6 +1,6 @@
 import UIKit
 
-enum CatalogModule {
+enum CatalogModuleBuilder {
     static func build() -> UIViewController {
         let viewController = CatalogViewController()
         

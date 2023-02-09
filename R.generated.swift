@@ -448,10 +448,82 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
+    /// Image `BasketIcon`.
+    static let basketIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "BasketIcon")
+    /// Image `CatalogIcon`.
+    static let catalogIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "CatalogIcon")
+    /// Image `FavoriteIcon`.
+    static let favoriteIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "FavoriteIcon")
+    /// Image `HomeIcon`.
+    static let homeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "HomeIcon")
+    /// Image `ProfileIcon`.
+    static let profileIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ProfileIcon")
+    /// Image `mainPageBackgroundCentral`.
+    static let mainPageBackgroundCentral = Rswift.ImageResource(bundle: R.hostingBundle, name: "mainPageBackgroundCentral")
+    /// Image `mainPageBackgroundLeft`.
+    static let mainPageBackgroundLeft = Rswift.ImageResource(bundle: R.hostingBundle, name: "mainPageBackgroundLeft")
+    /// Image `mainPageBackgroundRight`.
+    static let mainPageBackgroundRight = Rswift.ImageResource(bundle: R.hostingBundle, name: "mainPageBackgroundRight")
     /// Image `wineBackground`.
     static let wineBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "wineBackground")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "BasketIcon", bundle: ..., traitCollection: ...)`
+    static func basketIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.basketIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "CatalogIcon", bundle: ..., traitCollection: ...)`
+    static func catalogIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.catalogIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "FavoriteIcon", bundle: ..., traitCollection: ...)`
+    static func favoriteIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.favoriteIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "HomeIcon", bundle: ..., traitCollection: ...)`
+    static func homeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.homeIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ProfileIcon", bundle: ..., traitCollection: ...)`
+    static func profileIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profileIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mainPageBackgroundCentral", bundle: ..., traitCollection: ...)`
+    static func mainPageBackgroundCentral(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mainPageBackgroundCentral, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mainPageBackgroundLeft", bundle: ..., traitCollection: ...)`
+    static func mainPageBackgroundLeft(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mainPageBackgroundLeft, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mainPageBackgroundRight", bundle: ..., traitCollection: ...)`
+    static func mainPageBackgroundRight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mainPageBackgroundRight, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "wineBackground", bundle: ..., traitCollection: ...)`

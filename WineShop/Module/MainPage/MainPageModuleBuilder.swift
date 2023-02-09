@@ -1,6 +1,6 @@
 import UIKit
 
-enum MainPageModule {
+enum MainPageModuleBuilder {
     static func build() -> UIViewController {
         let viewController = MainPageViewController()
         

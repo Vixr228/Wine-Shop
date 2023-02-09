@@ -5,7 +5,7 @@ protocol MainPageRoute {
 extension MainPageRoute where Self: RouterProtocol {
     
     func openMainPageModule() {
-        let controller = MainPageModule.build()
+        let controller = MainPageModuleBuilder.build()
         viewController.navigationController?.setViewControllers([controller], animated: true) // need to change
     }
 }

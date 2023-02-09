@@ -5,7 +5,7 @@ protocol CatalogRoute {
 extension CatalogRoute where Self: RouterProtocol {
     
     func openCatalogModule() {
-        let controller = CatalogModule.build()
+        let controller = CatalogModuleBuilder.build()
         viewController.navigationController?.setViewControllers([controller], animated: true) // need to change
     }
 }

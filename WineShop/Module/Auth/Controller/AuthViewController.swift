@@ -15,10 +15,6 @@ class AuthViewController: BaseViewController<AuthView> {
     
     var output: AuthViewOutput!
     
-    internal override var navigationController: UINavigationController? {
-        return UIApplication.shared.delegate?.window??.rootViewController as? UINavigationController
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +32,12 @@ class AuthViewController: BaseViewController<AuthView> {
             #selector(logInButtonPressed), for: .touchUpInside)
         mainView.forgetButton.addTarget(self, action: #selector(forgetButtonPressed), for: .touchUpInside)
         mainView.signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func updateLoginButtonState(){
@@ -57,7 +59,7 @@ class AuthViewController: BaseViewController<AuthView> {
     @objc func signInButtonPressed(){
         let view = TabBarViewController()
         self.navigationController?.pushViewController(view, animated: true)
-        print("sigIn")
+        print("sigIn") 
     }
 
 }
