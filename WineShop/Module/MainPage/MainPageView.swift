@@ -1,15 +1,8 @@
 import UIKit
+import ImageSlideshow
 import SnapKit
 
 class MainPageView: BaseView {
-    
-    //    private let wineLabel: UILabel = {
-    //        let label = UILabel()
-    //        label.text = "Wine House"
-    //        label.font = R.font.philosopherRegular(size: 40)
-    //
-    //        return label
-    //    }()
     
     private let newTasteLabel: UILabel = {
         let label = UILabel()
@@ -68,7 +61,7 @@ class MainPageView: BaseView {
     
     var collectionViewStatic: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = R.color.background()
         return collectionView
     }()
     
@@ -79,68 +72,46 @@ class MainPageView: BaseView {
         searchBar.searchTextField.borderStyle = UITextField.BorderStyle.none
         searchBar.searchTextField.backgroundColor = R.color.footer()
         searchBar.searchTextField.font = R.font.montserratRegular(size: 12)
-        //searchBar.sizeToFit()
-        //searchBar.isTranslucent = false
         
         return searchBar
     }()
     
+    public var slider: ImageSlideshow = {
+        let slider = ImageSlideshow()
+        slider.backgroundColor = R.color.background()
+        
+        return slider
+    }()
     
     override func initSetup() {
         super.initSetup()
         
         backgroundColor = R.color.background()
         addSubview(searchBar)
-        addSubview(centralImage)
-        addSubview(rightImage)
-        addSubview(leftImage)
-        addSubview(wineLabel)
-        addSubview(smalLabel)
-        addSubview(newTasteLabel)
-        addSubview(peopleChoiceLabel)
+        
         addSubview(collectionViewStatic)
+        
+        addSubview(slider)
+        
+        
         
         setupConstraints()
     }
     
     private func setupConstraints() {
         
+        slider.snp.makeConstraints { make in
+            make.height.equalTo(168)
+            make.top.equalTo(searchBar.snp.bottom).offset(16)
+            make.right.left.equalToSuperview()
+        }
+        
         collectionViewStatic.snp.makeConstraints { make in
-            make.top.equalTo(newTasteLabel.snp.bottom)
-            make.height.equalTo(150)
-            make.left.right.equalToSuperview()
-        }
-        
-        newTasteLabel.snp.makeConstraints { make in
+            make.top.equalTo(slider.snp.bottom).offset(16)
+            //make.height.equalTo(150)
+            make.bottom.equalToSuperview()
             make.left.equalToSuperview().offset(16)
-            make.top.equalTo(centralImage.snp.bottom).offset(16)
-        }
-        
-        wineLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(221)
-        }
-        
-        smalLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(wineLabel.snp.bottom)
-        }
-        
-        rightImage.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
-            make.left.equalToSuperview()
-        }
-        
-        leftImage.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
-            make.right.equalToSuperview()
-        }
-        
-        centralImage.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
-            make.left.equalToSuperview().offset(61)
-            make.right.equalToSuperview().offset(-61)
+            make.right.equalToSuperview().offset(-16)
         }
         
         searchBar.searchTextField.snp.makeConstraints { make in

@@ -8,5 +8,6 @@ target 'WineShop' do
   
 pod 'SnapKit'
 pod 'R.swift', '~> 6.0.0'
+pod 'ImageSlideshow', :git => 'https://github.com/zloysergunya/ImageSlideshow.git'
 
 end

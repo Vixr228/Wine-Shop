@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E8521F1A39E40F212DC24EF /* Pods_WineShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8109599859CF40C67BD7EE41 /* Pods_WineShop.framework */; };
+		C03EB9C22995918100ED6518 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */; };
+		C080358129980752000162A3 /* WineSell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C080358029980751000162A3 /* WineSell.swift */; };
 		CE10ED21296DB91B00FBC0AB /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10ED20296DB91B00FBC0AB /* RouterProtocol.swift */; };
 		CE10ED23296DBAB000FBC0AB /* NothingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10ED22296DBAB000FBC0AB /* NothingRoute.swift */; };
 		CE14364E296ECD2900E9DD63 /* Philosopher-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE14364A296ECD2800E9DD63 /* Philosopher-Italic.ttf */; };
@@ -19,7 +21,7 @@
 		CE143657296ED03300E9DD63 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE143656296ED03300E9DD63 /* Montserrat-Regular.ttf */; };
 		CE14365B296EE58800E9DD63 /* StyledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14365A296EE58800E9DD63 /* StyledTextField.swift */; };
 		CE283811296FF95900D63D19 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE283810296FF95900D63D19 /* StyledButton.swift */; };
-		CE5B928F29944A9B00EBBCBC /* WineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B928E29944A9B00EBBCBC /* WineCell.swift */; };
+		CE5B928F29944A9B00EBBCBC /* SimpleWineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B928E29944A9B00EBBCBC /* SimpleWineCell.swift */; };
 		CE7213D529769FA600C6426A /* WineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7213D429769FA600C6426A /* WineInfo.swift */; };
 		CE7213D72976A52B00C6426A /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7213D62976A52B00C6426A /* DataProvider.swift */; };
 		CEB958D5296DA54D00A81E7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB958D4296DA54D00A81E7F /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 /* Begin PBXFileReference section */
 		16F21AC8CB4D33E962D76AA7 /* Pods-WineShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WineShop.release.xcconfig"; path = "Target Support Files/Pods-WineShop/Pods-WineShop.release.xcconfig"; sourceTree = "<group>"; };
 		8109599859CF40C67BD7EE41 /* Pods_WineShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WineShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		C080358029980751000162A3 /* WineSell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSell.swift; sourceTree = "<group>"; };
 		CE10ED20296DB91B00FBC0AB /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		CE10ED22296DBAB000FBC0AB /* NothingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingRoute.swift; sourceTree = "<group>"; };
 		CE14364A296ECD2800E9DD63 /* Philosopher-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher-Italic.ttf"; sourceTree = "<group>"; };
@@ -81,7 +85,7 @@
 		CE143656296ED03300E9DD63 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		CE14365A296EE58800E9DD63 /* StyledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextField.swift; sourceTree = "<group>"; };
 		CE283810296FF95900D63D19 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
-		CE5B928E29944A9B00EBBCBC /* WineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineCell.swift; sourceTree = "<group>"; };
+		CE5B928E29944A9B00EBBCBC /* SimpleWineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWineCell.swift; sourceTree = "<group>"; };
 		CE7213D429769FA600C6426A /* WineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInfo.swift; sourceTree = "<group>"; };
 		CE7213D62976A52B00C6426A /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		CEB958D1296DA54D00A81E7F /* WineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,7 +380,9 @@
 				CEBF540C297195E3003D7F81 /* MainPageModuleBuilder.swift */,
 				CEBF540D297195E3003D7F81 /* MainPagePresenter.swift */,
 				CEBF540E297195E3003D7F81 /* MainPageRouter.swift */,
-				CE5B928E29944A9B00EBBCBC /* WineCell.swift */,
+				CE5B928E29944A9B00EBBCBC /* SimpleWineCell.swift */,
+				C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */,
+				C080358029980751000162A3 /* WineSell.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -582,6 +588,7 @@
 				CEF255702972A2A900ECD2E0 /* BasketRouter.swift in Sources */,
 				CEF2557B2972A30800ECD2E0 /* FavoritePresenter.swift in Sources */,
 				CEB95907296DA7BA00A81E7F /* CatalogView.swift in Sources */,
+				C03EB9C22995918100ED6518 /* HeaderCollectionReusableView.swift in Sources */,
 				CEF2556C2972A2A900ECD2E0 /* BasketViewController.swift in Sources */,
 				CEBF5410297195E3003D7F81 /* MainPageViewController.swift in Sources */,
 				CE7213D72976A52B00C6426A /* DataProvider.swift in Sources */,
@@ -599,6 +606,7 @@
 				CEBF5413297195E3003D7F81 /* MainPagePresenter.swift in Sources */,
 				CEB958F3296DA70B00A81E7F /* AuthView.swift in Sources */,
 				CE10ED23296DBAB000FBC0AB /* NothingRoute.swift in Sources */,
+				C080358129980752000162A3 /* WineSell.swift in Sources */,
 				CEF255782972A30800ECD2E0 /* FavoriteViewController.swift in Sources */,
 				CEF255852972A35400ECD2E0 /* ProfileRoute.swift in Sources */,
 				CEB9590C296DAA3800A81E7F /* AuthModuleBuilder.swift in Sources */,
@@ -612,7 +620,7 @@
 				CE14365B296EE58800E9DD63 /* StyledTextField.swift in Sources */,
 				CEB958F1296DA6F800A81E7F /* AuthViewController.swift in Sources */,
 				CEB958D5296DA54D00A81E7F /* AppDelegate.swift in Sources */,
-				CE5B928F29944A9B00EBBCBC /* WineCell.swift in Sources */,
+				CE5B928F29944A9B00EBBCBC /* SimpleWineCell.swift in Sources */,
 				CEF255872972A35400ECD2E0 /* ProfileView.swift in Sources */,
 				CE7213D529769FA600C6426A /* WineInfo.swift in Sources */,
 				CEF2556E2972A2A900ECD2E0 /* BasketModuleBuilder.swift in Sources */,

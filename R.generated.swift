@@ -448,7 +448,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `BasketIcon`.
     static let basketIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "BasketIcon")
@@ -460,6 +460,10 @@ struct R: Rswift.Validatable {
     static let homeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "HomeIcon")
     /// Image `ProfileIcon`.
     static let profileIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ProfileIcon")
+    /// Image `Wine1`.
+    static let wine1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Wine1")
+    /// Image `Wine2`.
+    static let wine2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Wine2")
     /// Image `mainPageBackgroundCentral`.
     static let mainPageBackgroundCentral = Rswift.ImageResource(bundle: R.hostingBundle, name: "mainPageBackgroundCentral")
     /// Image `mainPageBackgroundLeft`.
@@ -501,6 +505,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ProfileIcon", bundle: ..., traitCollection: ...)`
     static func profileIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.profileIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Wine1", bundle: ..., traitCollection: ...)`
+    static func wine1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wine1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Wine2", bundle: ..., traitCollection: ...)`
+    static func wine2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wine2, compatibleWith: traitCollection)
     }
     #endif
 

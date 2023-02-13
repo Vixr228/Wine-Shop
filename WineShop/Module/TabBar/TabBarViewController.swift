@@ -70,6 +70,7 @@ class TabBarViewController: UITabBarController {
         
         tabBar.itemWidth = tabBar.bounds.width / 5
         tabBar.itemPositioning = .centered
+        tabBar.backgroundColor = R.color.footer()
         tabBar.barTintColor = R.color.footer()
         tabBar.tintColor = .white
         
