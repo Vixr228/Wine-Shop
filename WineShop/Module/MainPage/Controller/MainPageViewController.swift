@@ -10,6 +10,12 @@ class MainPageViewController: BaseViewController<MainPageView> {
     var dataProvider = DataProvider()
     var wineData = [WineInfo]()
     var images = [UIImageView]()
+    let simpleWineCardHeight = 150.0
+    let wineCardHeight = 250.0
+    let sliderHeight = 168.0
+    let firstSectionHeader = "Новый вкус"
+    let secondSectionHeader = "Народный выбор"
+    let headerHeight = 49.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +26,9 @@ class MainPageViewController: BaseViewController<MainPageView> {
         mainView.collectionViewStatic.dataSource = self
         mainView.collectionViewStatic.register(SimpleWineCell.self, forCellWithReuseIdentifier: SimpleWineCell.description())
         mainView.collectionViewStatic.register(WineCell.self, forCellWithReuseIdentifier: WineCell.description())
+        mainView.collectionViewStatic.register(SliderCell.self, forCellWithReuseIdentifier: SliderCell.description())
         mainView.collectionViewStatic.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifire)
         
-        
-        mainView.slider.setImageInputs([
-            ImageSource(image: UIImage(named: "mainPageBackgroundCentral")!),
-            ImageSource(image: UIImage(named: "mainPageBackgroundLeft")!),
-            ImageSource(image: UIImage(named: "mainPageBackgroundLeft")!)
-            
-        ])
-        
-       
     }
     
 }
@@ -48,11 +46,15 @@ extension MainPageViewController: UICollectionViewDelegateFlowLayout {
         
         let width = collectionView.frame.size.width
         let space = 8
-        if indexPath.section == 0 {
-            return CGSize(width: (width - CGFloat(space) * 2) / 3, height: 150.0)
-        } else {
-            print("section2")
-            return CGSize(width: (width - CGFloat(space)) / 2, height: 250.0)
+        switch indexPath.section {
+            case 0:
+                return CGSize(width: width, height: sliderHeight)
+            case 1:
+                return CGSize(width: (width - CGFloat(space) * 2) / 3, height: simpleWineCardHeight)
+            case 2:
+                return CGSize(width: (width - CGFloat(space)) / 2, height: wineCardHeight)
+            default:
+                return CGSize(width: 0, height: 0)
         }
         
     }
@@ -70,12 +72,19 @@ extension MainPageViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainPageViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(section)
-        return section == 0 ? 3 : 10 //chage num 5
+        
+        wineData = dataProvider.getWines()
+        switch section {
+            case 0: return 1
+            case 1: return 3
+            case 2: return wineData.count
+            default: return 0
+        }
     }
     
     
@@ -87,12 +96,15 @@ extension MainPageViewController: UICollectionViewDataSource {
             
             headerView.configure()
             
-            headerView.label.text = indexPath.section == 0 ? "Новый вкус" : "Народный выбор"
+            if indexPath.section == 1 {
+                headerView.label.text = firstSectionHeader
+            } else if indexPath.section == 2 {
+                headerView.label.text = secondSectionHeader
+            }
             
             return headerView
             
         default:
-            
             assert(false, "Unexpected element kind")
         }
     }
@@ -100,29 +112,41 @@ extension MainPageViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 49)
+        if section == 0 {
+            //no header
+            return CGSize(width: 0, height: 0)
+        }
+        return CGSize(width: view.frame.size.width, height: headerHeight)
     }
     
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //
-    //
-    //        return UIEdgeInsets(top: 13, left: 8, bottom: 16, right: 8)
-    //    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         wineData = dataProvider.getWines()
         
         if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SliderCell.description(), for: indexPath) as! SliderCell
+            
+            cell.slider.setImageInputs([
+                ImageSource(image: R.image.wineHouseImage()!),
+                ImageSource(image: R.image.sliderImage()!),
+                ImageSource(image: R.image.sliderImage()!)
+                
+            ])
+            return cell
+        } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SimpleWineCell.description(), for: indexPath) as! SimpleWineCell
             
-            cell.wineLabel.text = wineData[indexPath.row].name
-            cell.fromLabel.text = wineData[indexPath.row].country
-            cell.wineImage.image = wineData[indexPath.row].image
-            cell.priceLabel.text = String(wineData[indexPath.row].price!)
+            let wine = wineData[indexPath.row]
+            
+            cell.wineLabel.text = wine.name
+            cell.fromLabel.text = wine.country
+            cell.wineImage.image = wine.image
+            cell.priceLabel.text = "\(String(wine.price!)) ₽"
             
             return cell
-        } else {
+        } else if indexPath.section == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WineCell.description(), for: indexPath) as! WineCell
+            
             
             let wine = wineData[indexPath.row]
             
@@ -132,20 +156,11 @@ extension MainPageViewController: UICollectionViewDataSource {
             cell.priceLabel.text = "\(String(wine.price!)) ₽"
             cell.desription.text = "\(wine.colour!) \(wine.sugar!) вино,\n\(wine.grapeType!), \(String(wine.alcoStrength!))%"
             
-            
             return cell
         }
         
-        
-        
+        //TODO что возвращать
+        return UICollectionViewCell()
     }
     
-    
-    
-    
 }
-
-//Между заголовками и карточка = 12
-//Между верхней картинкой и первым заголовком = 16
-//картинки сверху - слайдер
-//Слайдер уходиь при скроле

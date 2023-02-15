@@ -31,7 +31,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         
         label.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(16)
+            make.left.equalToSuperview()
         }
         
     }

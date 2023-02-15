@@ -10,6 +10,8 @@
 		7E8521F1A39E40F212DC24EF /* Pods_WineShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8109599859CF40C67BD7EE41 /* Pods_WineShop.framework */; };
 		C03EB9C22995918100ED6518 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */; };
 		C080358129980752000162A3 /* WineSell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C080358029980751000162A3 /* WineSell.swift */; };
+		C0A4FEAB299D73C800E56787 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FEAA299D73C800E56787 /* SliderCell.swift */; };
+		C0A4FEBA299D92A600E56787 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FEB9299D92A600E56787 /* Constants.swift */; };
 		CE10ED21296DB91B00FBC0AB /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10ED20296DB91B00FBC0AB /* RouterProtocol.swift */; };
 		CE10ED23296DBAB000FBC0AB /* NothingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10ED22296DBAB000FBC0AB /* NothingRoute.swift */; };
 		CE14364E296ECD2900E9DD63 /* Philosopher-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE14364A296ECD2800E9DD63 /* Philosopher-Italic.ttf */; };
@@ -74,6 +76,8 @@
 		8109599859CF40C67BD7EE41 /* Pods_WineShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WineShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		C080358029980751000162A3 /* WineSell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSell.swift; sourceTree = "<group>"; };
+		C0A4FEAA299D73C800E56787 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
+		C0A4FEB9299D92A600E56787 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE10ED20296DB91B00FBC0AB /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		CE10ED22296DBAB000FBC0AB /* NothingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingRoute.swift; sourceTree = "<group>"; };
 		CE14364A296ECD2800E9DD63 /* Philosopher-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher-Italic.ttf"; sourceTree = "<group>"; };
@@ -157,6 +161,99 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C0A4FEAE299D7BEE00E56787 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C080358029980751000162A3 /* WineSell.swift */,
+				C0A4FEAA299D73C800E56787 /* SliderCell.swift */,
+				CE5B928E29944A9B00EBBCBC /* SimpleWineCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C0A4FEAF299D7C1700E56787 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF540A297195E3003D7F81 /* MainPageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C0A4FEB0299D7C2900E56787 /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF540C297195E3003D7F81 /* MainPageModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		C0A4FEB1299D7C4700E56787 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF540E297195E3003D7F81 /* MainPageRouter.swift */,
+				CEBF5409297195E3003D7F81 /* MainPageRoute.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		C0A4FEB2299D7C6000E56787 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF540D297195E3003D7F81 /* MainPagePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C0A4FEB3299D7C6900E56787 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF540B297195E3003D7F81 /* MainPageView.swift */,
+				C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0A4FEB4299D923400E56787 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				CEB958FF296DA7BA00A81E7F /* CatalogRoute.swift */,
+				CEB95904296DA7BA00A81E7F /* CatalogRouter.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		C0A4FEB5299D924400E56787 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEB95903296DA7BA00A81E7F /* CatalogPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C0A4FEB6299D924B00E56787 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEB95901296DA7BA00A81E7F /* CatalogView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0A4FEB7299D925500E56787 /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CEB95902296DA7BA00A81E7F /* CatalogModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		C0A4FEB8299D926400E56787 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEB95900296DA7BA00A81E7F /* CatalogViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CE143649296ECD0E00E9DD63 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +304,7 @@
 				CEBF520129700640003D7F81 /* Common */,
 				CEBF5200297005E6003D7F81 /* Module */,
 				CEB958D4296DA54D00A81E7F /* AppDelegate.swift */,
+				C0A4FEB9299D92A600E56787 /* Constants.swift */,
 			);
 			path = WineShop;
 			sourceTree = "<group>";
@@ -235,12 +333,11 @@
 		CEB958FE296DA7A500A81E7F /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
-				CEB958FF296DA7BA00A81E7F /* CatalogRoute.swift */,
-				CEB95900296DA7BA00A81E7F /* CatalogViewController.swift */,
-				CEB95901296DA7BA00A81E7F /* CatalogView.swift */,
-				CEB95902296DA7BA00A81E7F /* CatalogModuleBuilder.swift */,
-				CEB95903296DA7BA00A81E7F /* CatalogPresenter.swift */,
-				CEB95904296DA7BA00A81E7F /* CatalogRouter.swift */,
+				C0A4FEB8299D926400E56787 /* Controller */,
+				C0A4FEB7299D925500E56787 /* ModuleBuilder */,
+				C0A4FEB6299D924B00E56787 /* View */,
+				C0A4FEB5299D924400E56787 /* Presenter */,
+				C0A4FEB4299D923400E56787 /* Routing */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -262,6 +359,7 @@
 		CEBF520129700640003D7F81 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C0A4FEAE299D7BEE00E56787 /* Cells */,
 				CEBF52072970072E003D7F81 /* StandartFiles */,
 				CEBF5205297006AA003D7F81 /* Routing */,
 				CEB958F8296DA73100A81E7F /* Root */,
@@ -374,15 +472,11 @@
 		CEBF540829719565003D7F81 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF5409297195E3003D7F81 /* MainPageRoute.swift */,
-				CEBF540A297195E3003D7F81 /* MainPageViewController.swift */,
-				CEBF540B297195E3003D7F81 /* MainPageView.swift */,
-				CEBF540C297195E3003D7F81 /* MainPageModuleBuilder.swift */,
-				CEBF540D297195E3003D7F81 /* MainPagePresenter.swift */,
-				CEBF540E297195E3003D7F81 /* MainPageRouter.swift */,
-				CE5B928E29944A9B00EBBCBC /* SimpleWineCell.swift */,
-				C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */,
-				C080358029980751000162A3 /* WineSell.swift */,
+				C0A4FEB3299D7C6900E56787 /* View */,
+				C0A4FEB2299D7C6000E56787 /* Presenter */,
+				C0A4FEB1299D7C4700E56787 /* Routing */,
+				C0A4FEB0299D7C2900E56787 /* ModuleBuilder */,
+				C0A4FEAF299D7C1700E56787 /* Controller */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -578,8 +672,10 @@
 				CEB95906296DA7BA00A81E7F /* CatalogViewController.swift in Sources */,
 				CEF2558C2972A69B00ECD2E0 /* R.generated.swift in Sources */,
 				CEF255882972A35400ECD2E0 /* ProfileModuleBuilder.swift in Sources */,
+				C0A4FEAB299D73C800E56787 /* SliderCell.swift in Sources */,
 				CEF2556F2972A2A900ECD2E0 /* BasketPresenter.swift in Sources */,
 				CEB95908296DA7BA00A81E7F /* CatalogModuleBuilder.swift in Sources */,
+				C0A4FEBA299D92A600E56787 /* Constants.swift in Sources */,
 				CEBF5414297195E3003D7F81 /* MainPageRouter.swift in Sources */,
 				CEBF5411297195E3003D7F81 /* MainPageView.swift in Sources */,
 				CEF2557A2972A30800ECD2E0 /* FavoriteModuleBuilder.swift in Sources */,

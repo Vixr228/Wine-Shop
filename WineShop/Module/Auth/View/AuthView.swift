@@ -31,7 +31,7 @@ class AuthView: BaseView {
         let button = UIButton()
         button.setTitle("Забыли пароль?", for: .normal)
         button.titleLabel?.font = R.font.montserratRegular(size: 12)
-        button.setTitleColor(R.color.text_default(), for: .normal)
+        button.setTitleColor(R.color.textDefault(), for: .normal)
        
         return button
         
@@ -40,8 +40,8 @@ class AuthView: BaseView {
      let loginTextField: StyledTextField = {
         let textField = StyledTextField()
         textField.font = R.font.montserratRegular(size: 14)
-        textField.attributedPlaceholder = NSAttributedString(string: "Номер телефона", attributes: [NSAttributedString.Key.foregroundColor: R.color.text_input()!])
-        textField.backgroundColor = R.color.white_alpha01()
+        textField.attributedPlaceholder = NSAttributedString(string: "Номер телефона", attributes: [NSAttributedString.Key.foregroundColor: R.color.textInput()!])
+        textField.backgroundColor = R.color.whiteAlpha01()
         
         
         
@@ -51,8 +51,8 @@ class AuthView: BaseView {
      let passwordTextField: StyledTextField = {
         let textField = StyledTextField()
         textField.font = R.font.montserratRegular(size: 14)
-        textField.attributedPlaceholder = NSAttributedString(string: "Пароль", attributes: [NSAttributedString.Key.foregroundColor: R.color.text_input()!])
-        textField.backgroundColor = R.color.white_alpha01()
+        textField.attributedPlaceholder = NSAttributedString(string: "Пароль", attributes: [NSAttributedString.Key.foregroundColor: R.color.textInput()!])
+        textField.backgroundColor = R.color.whiteAlpha01()
         
         return textField
     }()
@@ -61,9 +61,9 @@ class AuthView: BaseView {
         let button = StyledButton()
         button.setTitle("Войти", for: .normal)
         button.titleLabel?.font = R.font.montserratRegular(size: 14)
-        button.setBackgroundColor(color: R.color.button_disable()!, forState: .disabled)
-        button.setBackgroundColor(color: R.color.button_active()!, forState: .normal)
-        button.setTitleColor(R.color.white_alpha019(), for: .disabled)
+        button.setBackgroundColor(color: R.color.buttonDisable()!, forState: .disabled)
+        button.setBackgroundColor(color: R.color.buttonActive()!, forState: .normal)
+        button.setTitleColor(R.color.whiteAlpha019(), for: .disabled)
         button.setTitleColor(.white, for: .normal)
         
         return button
@@ -73,7 +73,7 @@ class AuthView: BaseView {
         let button = UIButton()
         button.setTitle("Зарегистрироваться", for: .normal)
         button.titleLabel?.font = R.font.montserratRegular(size: 14)
-        button.setTitleColor(R.color.text_default(), for: .normal)
+        button.setTitleColor(R.color.textDefault(), for: .normal)
         
         return button
     }()
