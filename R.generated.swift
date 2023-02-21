@@ -448,7 +448,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 11 images.
+  /// This `R.image` struct is generated, and contains static references to 15 images.
   struct image {
     /// Image `Wine1`.
     static let wine1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Wine1")
@@ -460,12 +460,20 @@ struct R: Rswift.Validatable {
     static let catalogIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "catalogIcon")
     /// Image `favoriteIconPressed`.
     static let favoriteIconPressed = Rswift.ImageResource(bundle: R.hostingBundle, name: "favoriteIconPressed")
+    /// Image `favoriteIconSmall`.
+    static let favoriteIconSmall = Rswift.ImageResource(bundle: R.hostingBundle, name: "favoriteIconSmall")
     /// Image `favoriteIcon`.
     static let favoriteIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "favoriteIcon")
     /// Image `homeIcon`.
     static let homeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "homeIcon")
+    /// Image `navigationArrow`.
+    static let navigationArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "navigationArrow")
+    /// Image `notSelectIcon`.
+    static let notSelectIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "notSelectIcon")
     /// Image `profileIcon`.
     static let profileIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "profileIcon")
+    /// Image `selectedIcon`.
+    static let selectedIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "selectedIcon")
     /// Image `sliderImage`.
     static let sliderImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "sliderImage")
     /// Image `wineBackground`.
@@ -516,6 +524,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "favoriteIconSmall", bundle: ..., traitCollection: ...)`
+    static func favoriteIconSmall(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.favoriteIconSmall, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "homeIcon", bundle: ..., traitCollection: ...)`
     static func homeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.homeIcon, compatibleWith: traitCollection)
@@ -523,9 +538,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "navigationArrow", bundle: ..., traitCollection: ...)`
+    static func navigationArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navigationArrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "notSelectIcon", bundle: ..., traitCollection: ...)`
+    static func notSelectIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.notSelectIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "profileIcon", bundle: ..., traitCollection: ...)`
     static func profileIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.profileIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "selectedIcon", bundle: ..., traitCollection: ...)`
+    static func selectedIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.selectedIcon, compatibleWith: traitCollection)
     }
     #endif
 

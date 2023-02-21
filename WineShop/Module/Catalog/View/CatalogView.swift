@@ -3,6 +3,19 @@ import SnapKit
 
 class CatalogView: BaseView {
     
+    let navBar: NavBarView = {
+        let view = NavBarView()
+        view.backgroundColor = R.color.background()
+        let configuration = NavBarConfiguration(title: "Каталог",
+                                                subtitle: nil,
+                                                leftButtonImage: R.image.navigationArrow(),
+                                                rightButtonImage: nil,
+                                                rightButtonTitleText: nil)
+        view.configure(with: configuration)
+        
+        return view
+    }()
+    
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .default
@@ -31,21 +44,30 @@ class CatalogView: BaseView {
         super.initSetup()
         
         backgroundColor = R.color.background()
+        
         addSubview(searchBar)
         addSubview(filtersView)
         addSubview(collectionView)
+        addSubview(navBar)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
+        
+        navBar.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(44)
+        }
+        
         searchBar.searchTextField.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
         searchBar.snp.makeConstraints { make in
             make.height.equalTo(44)
-            make.top.equalToSuperview().offset(60)
+            make.top.equalTo(navBar.snp.bottom).offset(23)
             make.centerX.equalToSuperview()
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)

@@ -10,6 +10,10 @@
 		7E8521F1A39E40F212DC24EF /* Pods_WineShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8109599859CF40C67BD7EE41 /* Pods_WineShop.framework */; };
 		C03EB9C22995918100ED6518 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */; };
 		C080358129980752000162A3 /* WineSell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C080358029980751000162A3 /* WineSell.swift */; };
+		C0A08C2E299EB61A007AF4DF /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A08C2D299EB61A007AF4DF /* NavBarView.swift */; };
+		C0A08C30299EC0C0007AF4DF /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A08C2F299EC0C0007AF4DF /* BasketCell.swift */; };
+		C0A08C32299ECBA4007AF4DF /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A08C31299ECBA4007AF4DF /* StepperView.swift */; };
+		C0A1DD4F29A50048005B40E6 /* EditBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1DD4E29A50048005B40E6 /* EditBasketCell.swift */; };
 		C0A4FEAB299D73C800E56787 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FEAA299D73C800E56787 /* SliderCell.swift */; };
 		C0A4FEBA299D92A600E56787 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4FEB9299D92A600E56787 /* Constants.swift */; };
 		CE10ED21296DB91B00FBC0AB /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10ED20296DB91B00FBC0AB /* RouterProtocol.swift */; };
@@ -76,6 +80,10 @@
 		8109599859CF40C67BD7EE41 /* Pods_WineShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WineShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03EB9C12995918100ED6518 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		C080358029980751000162A3 /* WineSell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSell.swift; sourceTree = "<group>"; };
+		C0A08C2D299EB61A007AF4DF /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		C0A08C2F299EC0C0007AF4DF /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
+		C0A08C31299ECBA4007AF4DF /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
+		C0A1DD4E29A50048005B40E6 /* EditBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBasketCell.swift; sourceTree = "<group>"; };
 		C0A4FEAA299D73C800E56787 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		C0A4FEB9299D92A600E56787 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE10ED20296DB91B00FBC0AB /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
@@ -167,6 +175,8 @@
 				C080358029980751000162A3 /* WineSell.swift */,
 				C0A4FEAA299D73C800E56787 /* SliderCell.swift */,
 				CE5B928E29944A9B00EBBCBC /* SimpleWineCell.swift */,
+				C0A08C2F299EC0C0007AF4DF /* BasketCell.swift */,
+				C0A1DD4E29A50048005B40E6 /* EditBasketCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -364,6 +374,8 @@
 				CEBF5205297006AA003D7F81 /* Routing */,
 				CEB958F8296DA73100A81E7F /* Root */,
 				CEBF52022970064A003D7F81 /* Views */,
+				C0A08C2D299EB61A007AF4DF /* NavBarView.swift */,
+				C0A08C31299ECBA4007AF4DF /* StepperView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -669,6 +681,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF2556D2972A2A900ECD2E0 /* BasketView.swift in Sources */,
+				C0A08C32299ECBA4007AF4DF /* StepperView.swift in Sources */,
+				C0A08C30299EC0C0007AF4DF /* BasketCell.swift in Sources */,
 				CEB95906296DA7BA00A81E7F /* CatalogViewController.swift in Sources */,
 				CEF2558C2972A69B00ECD2E0 /* R.generated.swift in Sources */,
 				CEF255882972A35400ECD2E0 /* ProfileModuleBuilder.swift in Sources */,
@@ -694,6 +708,7 @@
 				CEF2557C2972A30800ECD2E0 /* FavoriteRouter.swift in Sources */,
 				CEB958FD296DA75200A81E7F /* BaseViewController.swift in Sources */,
 				CEF255792972A30800ECD2E0 /* FavoriteView.swift in Sources */,
+				C0A08C2E299EB61A007AF4DF /* NavBarView.swift in Sources */,
 				CEB958F5296DA71600A81E7F /* AuthRouter.swift in Sources */,
 				CEF255892972A35400ECD2E0 /* ProfilePresenter.swift in Sources */,
 				CEB958EF296DA6EA00A81E7F /* AuthPresenter.swift in Sources */,
@@ -720,6 +735,7 @@
 				CEF255872972A35400ECD2E0 /* ProfileView.swift in Sources */,
 				CE7213D529769FA600C6426A /* WineInfo.swift in Sources */,
 				CEF2556E2972A2A900ECD2E0 /* BasketModuleBuilder.swift in Sources */,
+				C0A1DD4F29A50048005B40E6 /* EditBasketCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

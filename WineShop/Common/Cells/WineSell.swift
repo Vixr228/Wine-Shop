@@ -53,16 +53,6 @@ class WineCell: UICollectionViewCell {
         return imageView
     }()
     
-    var basketButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("В корзину", for: .normal)
-        button.titleLabel?.textColor = .white
-        button.backgroundColor = R.color.buttonActive()
-        button.titleLabel?.font = R.font.montserratRegular(size: 12)
-        button.isHidden = false
-        button.layer.cornerRadius = 4
-        return button
-    }()
     
     var desription: UILabel = {
         let label = UILabel()
@@ -75,50 +65,9 @@ class WineCell: UICollectionViewCell {
     
     
     var stepperView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 4
-        view.layer.borderColor = UIColor(red: 0.771, green: 0.771, blue: 0.771, alpha: 0.5).cgColor
-        view.layer.borderWidth = 1
-        view.isHidden = true
-        
+        let view = StepperView()
         return view
     }()
-    
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 0
-        stackView.distribution = .fillEqually
-        
-        return stackView
-    }()
-    
-    let plusButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.03)
-        button.titleLabel?.textAlignment = .center
-        button.setTitle("+", for: .normal)
-        return button
-    }()
-    
-    let minusButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.03)
-        button.titleLabel?.textAlignment = .center
-        button.setTitle("-", for: .normal)
-        
-        return button
-    }()
-    
-    var counterLabel: UILabel = {
-        let label = UILabel()
-        label.text = "1"
-        label.textAlignment = .center
-        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.03)
-        
-        return label
-    }()
-    
     
     private func setupConstraints() {
         
@@ -145,12 +94,6 @@ class WineCell: UICollectionViewCell {
             make.left.equalToSuperview().offset(9)
         }
         
-        basketButton.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-8)
-            make.top.equalTo(desription.snp.bottom).offset(4)
-            make.height.equalTo(32)
-            make.width.equalTo(80)
-        }
         
         stepperView.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-8)
@@ -171,12 +114,6 @@ class WineCell: UICollectionViewCell {
             make.left.equalToSuperview().offset(8)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.top.right.left.bottom.equalToSuperview()
-            make.width.height.equalToSuperview()
-        }
-        
     }
     
     override init(frame: CGRect) {
@@ -187,69 +124,22 @@ class WineCell: UICollectionViewCell {
         addSubview(wineLabel)
         addSubview(fromLabel)
         addSubview(wineImage)
-        addSubview(basketButton)
-        stackView.addArrangedSubview(minusButton)
-        stackView.addArrangedSubview(counterLabel)
-        stackView.addArrangedSubview(plusButton)
-        stepperView.addSubview(stackView)
         addSubview(stepperView)
         addSubview(priceLabel)
         addSubview(favoriteButton)
         addSubview(desription)
        
         
-        
-        plusButton.removeTarget(self, action: #selector(stepperButtonsPressed), for: .touchUpInside)
-        minusButton.removeTarget(self, action: #selector(stepperButtonsPressed), for: .touchUpInside)
         favoriteButton.removeTarget(self, action: #selector(favoriteButtonPressed), for: .touchUpInside)
-        plusButton.addTarget(self, action: #selector(stepperButtonsPressed), for: .touchUpInside)
-        minusButton.addTarget(self, action: #selector(stepperButtonsPressed), for: .touchUpInside)
-        basketButton.addTarget(self, action: #selector(basketButtonPressed), for: .touchUpInside)
         favoriteButton.addTarget(self, action: #selector(favoriteButtonPressed), for: .touchUpInside)
-        
+
         
         setupConstraints()
-        
-    }
-    
-    @objc func stepperButtonsPressed (button: UIButton){
-        let operation = button.titleLabel?.text
-        if let counter = counterLabel.text {
-            var count = Int(counter)!
-            
-            switch operation {
-                case "+":
-                    if count >= 0 {
-                        count += 1
-                    }
-                case "-":
-                    if count > 1 {
-                        count -= 1
-                    } else if count == 1 {
-                        changeStepperButtonState()
-                    }
-                default:
-                    print("??")
-                
-            }
-            
-            counterLabel.text = "\(count)"
-            
-        }
-    }
-                
-    @objc func basketButtonPressed() {
-        changeStepperButtonState()
         
     }
                                  
     @objc func favoriteButtonPressed() {
         favoriteButton.isSelected = !favoriteButton.isSelected
-    }
-    
-    func changeStepperButtonState() {
-        basketButton.isHidden = !basketButton.isHidden
-        stepperView.isHidden = !stepperView.isHidden
     }
     
     required init?(coder: NSCoder) {
