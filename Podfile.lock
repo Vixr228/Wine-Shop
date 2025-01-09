@@ -1,0 +1,38 @@
+PODS:
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
+  - R.swift (6.0.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - ImageSlideshow (from `https://github.com/zloysergunya/ImageSlideshow.git`)
+  - R.swift (~> 6.0.0)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - R.swift
+    - R.swift.Library
+    - SnapKit
+
+EXTERNAL SOURCES:
+  ImageSlideshow:
+    :git: https://github.com/zloysergunya/ImageSlideshow.git
+
+CHECKOUT OPTIONS:
+  ImageSlideshow:
+    :commit: 836b07c89eba8bb911ea727a83d04f2d7b8598be
+    :git: https://github.com/zloysergunya/ImageSlideshow.git
+
+SPEC CHECKSUMS:
+  ImageSlideshow: 63a2886dd2c29a1266d340b1f0c916838ad937f6
+  R.swift: 5ec056f5ba2744de1c3f6deeb4882ae2630f6e63
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 366d5536bea7167d1a1e5297f93a05ccb8ccf4a8
+
+COCOAPODS: 1.11.3
